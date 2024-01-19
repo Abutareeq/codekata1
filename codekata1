@@ -1,0 +1,37 @@
+/* A person saves his monthly saving according to given schema. He saves same amount of money which is 
+equal to the money saved in immediate previous two months. Assume, initially he saved 1000 rupees and 
+in first month he saved another 1000. Your task is to tell how much he had totally saved at the end of 
+‘n’ months.
+Input Description:
+You will be given a number ‘n’->No. of months
+Output Description:
+Print the total savings at the end of ‘n’ months
+Sample Input :
+1
+Sample Output :
+2000     */
+
+/* according to question he immediatly have 1000, and then in first months he saves 1000
+total amount for first month is 2000
+for the second month total = total of previous month + total income of latst month  
+                           = 2000 +2000
+       second month saving = 4000
+       third month saving  = 3000 + 4000 = 7000     */
+
+var n = parseInt(1)   //given userInput
+var arr = [1000,1000] //initial saving 1000 and first month saving 1000 according to question
+var saving = 0        //initialy saving is 0
+var a = 1000
+var b = 1000
+
+for (var i=1; i<n; i++){
+    saving = a+b
+    arr.push(saving)
+    a = b
+    b = saving
+}
+var sum = 0
+for ( var j=0; j<arr.length; j++ ){
+    sum+=arr[j];
+}
+console.log(sum)
