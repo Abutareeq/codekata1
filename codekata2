@@ -1,0 +1,29 @@
+/* Rahul is given a task to manipulate a string, He hired you as a developer your task is to delete all 
+the repeating characters and print the result left.
+
+Input Description:
+You are given a string ‘s’
+
+Output Description:
+Print the remaining string
+
+Sample Input :
+mississipie
+Sample Output :
+mpe                     */
+
+var str = userInput[0];
+var res = ""
+for(var i=0; i<str.length; i++){    //traversing through the str
+    var rep = false                 //Boolean value
+    for(var j=0; j<str.length; j++){
+        if( j != i && str[i] == str[j]){
+            rep = true
+            break;
+        }
+    }
+    if( !rep ){
+        res += str[i]
+    }
+}
+  console.log(res);
